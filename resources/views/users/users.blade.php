@@ -22,7 +22,7 @@
 
                 <div class="movie text-left d-inline-block">
 
-                    ＠{!! link_to_route('users.show',$user->name,['id'=>$user->id]) !!}
+                    ＠{!! link_to_route('users.show',$user->name,['user'=>$user]) !!}
 
                     <div>
                         @if($movie)
@@ -37,7 +37,7 @@
                             {{ $movie->comment }}
                         @endif
                     </p>
-
+                              @include('follow.follow_button', ['user' => $user])
                 </div>
                 
             </div>
